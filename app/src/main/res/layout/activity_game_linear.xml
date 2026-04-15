@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tv_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:padding="20dp" />
+
+    <ImageView
+        android:id="@+id/steakImage"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:src="@drawable/steak_raw"
+        android:contentDescription="Steak image" />
+
+    <Button
+        android:id="@+id/score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cook_button" />
+
+    <Button
+        android:id="@+id/steal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/burn_button" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/reset_button" />
+
+</LinearLayout>

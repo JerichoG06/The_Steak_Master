@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">The_Steak_Master</string>
+    <string name="app_name">The Steak Master</string>
+    
+    <string name="cook_button">Cook Steak</string>
+    <string name="burn_button">Burn Steak</string>
+    <string name="reset_button">New Steak</string>
 </resources>
