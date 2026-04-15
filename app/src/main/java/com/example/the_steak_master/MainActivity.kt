@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.ImageView
+import android.util.Log
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,12 +37,15 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState != null) {
             score = savedInstanceState.getInt(SCORE_KEY)
+            Log.d("STEAK_MASTER", "Score restored: $score")
         }
 
         updateScore()
 
         cookButton.setOnClickListener {
             score += 1
+            Log.d("STEAK_MASTER", "Cook button clicked. Score: $score")
+            Log.d("STEAK_MASTER", "Cook sound should play")
             SoundPlayer.playCook()
             updateScore()
         }
@@ -50,6 +54,8 @@ class MainActivity : AppCompatActivity() {
             if (score > 0) {
                 score -= 1
             }
+            Log.d("STEAK_MASTER", "Burn button clicked. Score: $score")
+            Log.d("STEAK_MASTER", "Burn sound should play")
             SoundPlayer.playBurn()
             updateScore()
         }
@@ -62,12 +68,16 @@ class MainActivity : AppCompatActivity() {
 
             steakImage.setImageResource(R.drawable.steak_raw)
 
+            Log.d("STEAK_MASTER", "Reset button clicked. Score reset to 0")
             updateScore()
         }
     }
 
     private fun updateScore() {
         if (score == 15) {
+            Log.d("STEAK_MASTER", "Win condition reached")
+            Log.d("STEAK_MASTER", "Win sound should play")
+
             SoundPlayer.playWin()
 
             cookButton.isEnabled = false
@@ -83,5 +93,6 @@ class MainActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt(SCORE_KEY, score)
+        Log.d("STEAK_MASTER", "Score saved: $score")
     }
 }
